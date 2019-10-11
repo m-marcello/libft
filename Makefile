@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/14 13:21:34 by mmarcell       #+#    #+#                 #
-#    Updated: 2019/03/19 18:48:40 by mmarcell      ########   odam.nl          #
+#    Updated: 2019/07/04 16:47:38 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ ft_strdel ft_strclr ft_strjoin ft_strequ ft_strnequ ft_striter ft_striteri\
 ft_strmap ft_strmapi ft_strsub ft_strsplit ft_lstnew ft_lstadd ft_lstdelone\
 ft_lstdel ft_lstiter ft_lstmap\
 ft_get_decimals ft_power ft_isupper ft_islower ft_lstadd_back ft_memdup\
-ft_delete ft_lstfold ft_lstadd_behind ft_lstadd_before ft_lstcount
+ft_delete ft_lstfold ft_lstadd_behind ft_lstadd_before ft_lstcount ft_itoa_base\
+ft_nbrlen_unsigned
 
 SRC = $(FUNCTIONS:%=%.c)
 

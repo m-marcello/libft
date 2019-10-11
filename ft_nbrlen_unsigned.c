@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcpy.c                                        :+:    :+:            */
+/*   ft_nbrlen_unsigned.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/16 19:57:06 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/10 17:56:41 by mmarcell      ########   odam.nl         */
+/*   Created: 2019/05/20 15:15:53 by mmarcell       #+#    #+#                */
+/*   Updated: 2019/07/04 15:09:35 by wmisiedj      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+unsigned int	ft_nbrlen_unsigned(long long int nbr, int base)
 {
-	size_t	i;
+	unsigned int nbrlen;
 
-	if (!dst && !src)
-		return (dst);
-	i = 0;
-	while (i < n)
+	nbrlen = 1;
+	while ((nbr <= (-1) * base || base <= nbr))
 	{
-		*(((unsigned char*)dst) + i) = *(((unsigned char*)src) + i);
-		i++;
+		nbr = nbr / base;
+		++nbrlen;
 	}
-	return (dst);
+	return (nbrlen);
 }

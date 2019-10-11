@@ -6,17 +6,15 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:04:07 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/18 13:14:05 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/10 17:52:17 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_atoi(const char *s)
+long long int	ft_atoi(const char *s)
 {
-	unsigned int		result;
-	int					sign;
-	size_t				i;
+	unsigned long long int	result;
+	int						sign;
+	unsigned int			i;
 
 	sign = 1;
 	result = 0;

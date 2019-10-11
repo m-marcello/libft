@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_bzero.c                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
+/*   By: wmisiedj <wmisiedj@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/16 19:56:48 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/18 13:14:05 by mmarcell      ########   odam.nl         */
+/*   Created: 2019/01/30 15:56:12 by wmisiedj       #+#    #+#                */
+/*   Updated: 2019/10/10 19:14:59 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,27 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n > 0)
+	char	i;
+
+	i = 1;
+	while (i * sizeof(long long int) <= n)
 	{
-		((unsigned char*)s)[n - 1] = 0;
-		n--;
+		((long long int*)s)[i - 1] = 0;
+		i++;
+	}
+	while (i * sizeof(long int) <= n)
+	{
+		((long int*)s)[i - 1] = 0;
+		i++;
+	}
+	while (i * sizeof(int) <= n)
+	{
+		((int*)s)[i - 1] = 0;
+		i++;
+	}
+	while (i * sizeof(char) <= n)
+	{
+		((char*)s)[i - 1] = 0;
+		i++;
 	}
 }
