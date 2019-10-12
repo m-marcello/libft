@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 21:05:44 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/25 14:41:16 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/11 13:20:14 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+
+# define BUFF_SIZE 1
+# define FD_MAX 4864
 
 typedef struct	s_list
 {
@@ -23,7 +27,6 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-size_t			ft_get_decimals(int n);
 int				ft_power(int base, unsigned int exp);
 int				ft_islower(int c);
 int				ft_isupper(int c);
@@ -34,14 +37,17 @@ void			ft_lstadd_behind(t_list **alst, t_list *node, t_list *new_nd);
 void			ft_lstadd_before(t_list **alst, t_list *node, t_list *new_nd);
 size_t			ft_lstcount(t_list *lst);
 void			*ft_memdup(void *ptr, size_t size);
-int				ft_atoi(const char *s);
+long long int	ft_atoi(const char *s);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
-char			*ft_itoa(int n);
+char			*ft_itoa(long long int n);
+char			*ft_itoa_base_unsgnd(unsigned long long int n, int base,
+				int is_cap, unsigned int len);
+unsigned int	ft_nbrlen_unsigned(long long int nbr, int base);
 void			ft_lstadd(t_list **alst, t_list *item);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -92,5 +98,6 @@ char			*ft_strsub(const char *s, unsigned int start, size_t len);
 char			*ft_strtrim(const char *s);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+int				get_next_line(const int fd, char **line);
 
 #endif
