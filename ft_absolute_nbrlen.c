@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstdel.c                                        :+:    :+:            */
+/*   ft_absolute_nbrlen.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/12 18:18:43 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/12 19:40:21 by mmarcell      ########   odam.nl         */
+/*   Created: 2019/05/20 15:15:53 by mmarcell       #+#    #+#                */
+/*   Updated: 2019/07/20 14:12:07 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+unsigned int	ft_absolute_nbrlen(long long int nbr, int base)
 {
-	t_list	*tmp;
+	unsigned int nbrlen;
 
-	tmp = NULL;
-	while (*alst)
+	nbrlen = 1;
+	while ((nbr <= (-1) * base || base <= nbr))
 	{
-		tmp = (*alst)->next;
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
-		*alst = tmp;
+		nbr = nbr / base;
+		++nbrlen;
 	}
+	return (nbrlen);
 }

@@ -6,11 +6,11 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:08:01 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/03/10 16:25:53 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:35:14 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	ft_strdel(char **as)
 {

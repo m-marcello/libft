@@ -6,10 +6,11 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 14:40:57 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/21 17:10:38 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:36:47 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)

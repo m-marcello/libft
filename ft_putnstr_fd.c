@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_nbrlen_unsigned.c                               :+:    :+:            */
+/*   ft_putnstr_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
+/*   By: wmisiedj <wmisiedj@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/05/20 15:15:53 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/07/04 15:09:35 by wmisiedj      ########   odam.nl         */
+/*   Created: 2019/01/14 17:02:54 by wmisiedj       #+#    #+#                */
+/*   Updated: 2019/10/12 17:13:06 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_nbrlen_unsigned(long long int nbr, int base)
-{
-	unsigned int nbrlen;
+#include <unistd.h>
 
-	nbrlen = 1;
-	while ((nbr <= (-1) * base || base <= nbr))
-	{
-		nbr = nbr / base;
-		++nbrlen;
-	}
-	return (nbrlen);
+ssize_t		ft_putnstr_fd(const char *str, size_t len, int fd)
+{
+	return (write(fd, str, len));
 }

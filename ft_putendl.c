@@ -6,15 +6,15 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/20 15:17:47 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/21 15:25:56 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:31:17 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putendl(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (!s)

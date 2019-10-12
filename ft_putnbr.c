@@ -6,21 +6,18 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/20 15:25:57 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/18 13:14:05 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:31:14 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putnbr(int n)
 {
 	char	c;
 
 	if (n == -2147483648)
-	{
-		write(1, "-2", 2);
-		ft_putnbr(147483648);
-	}
+		write(1, "-2147483648", 11);
 	else if (n < 0)
 	{
 		write(1, "-", 1);

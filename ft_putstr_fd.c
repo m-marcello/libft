@@ -6,15 +6,15 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:14:23 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/21 15:26:11 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:31:02 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(const char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (!s)

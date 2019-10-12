@@ -6,10 +6,11 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/08 10:48:22 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/11 17:09:34 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:39:15 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 /*

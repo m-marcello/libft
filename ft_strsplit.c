@@ -6,10 +6,11 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:11:56 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/19 15:26:42 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:35:48 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 static size_t	count_words(char *s, char c)

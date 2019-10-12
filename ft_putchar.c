@@ -6,11 +6,11 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:12:32 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/21 17:39:53 by mmarcell      ########   odam.nl         */
+/*   Updated: 2019/10/12 19:31:29 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
