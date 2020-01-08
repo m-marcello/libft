@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/14 13:21:34 by mmarcell       #+#    #+#                 #
-#    Updated: 2020/01/08 17:30:49 by mmarcell      ########   odam.nl          #
+#    Updated: 2020/01/08 19:02:05 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,10 @@ $(NAME): $(OBJS)
 	@$(CC) -c $(CFLAGS) -o $@ $<
 
 clean:
-	@rm -f $(OBJS)
+	@rm -fv $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -fv $(NAME)
 
 re: fclean all
 
