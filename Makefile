@@ -6,16 +6,16 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/14 13:21:34 by mmarcell       #+#    #+#                 #
-#    Updated: 2020/01/08 16:51:56 by mmarcell      ########   odam.nl          #
+#    Updated: 2020/01/08 17:12:57 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 include mini_srcs
 
-NAME = libft.a
-OBJS = $(MINI_SOURCES:%=%.o)
-HDRS = libft.h
-CFLAGS = -Wall -Wextra -Werror
+NAME := libft.a
+OBJS := $(MINI_SOURCES:%=%.o)
+HDRS := libft.h
+CFLAGS := -Wall -Wextra -Werror
 
 all: $(NAME)
 
