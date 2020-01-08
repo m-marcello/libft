@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/14 13:21:34 by mmarcell       #+#    #+#                 #
-#    Updated: 2020/01/08 17:12:57 by mmarcell      ########   odam.nl          #
+#    Updated: 2020/01/08 17:30:49 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $^
 
 %.o: %.c $(HDRS)
-	$(CC) -c $(CFLAGS) -o $@ $<
+	@$(CC) -c $(CFLAGS) -o $@ $<
 
 clean:
 	@rm -f $(OBJS)
