@@ -6,16 +6,19 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/14 13:21:34 by mmarcell       #+#    #+#                 #
-#    Updated: 2020/01/09 17:59:54 by mmarcell      ########   odam.nl          #
+#    Updated: 2020/01/09 18:53:45 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 include mini_srcs
 
 NAME := libft.a
+
 OBJS := $(MINI_SOURCES:%=%.o)
-HDRS := libft.h
+
 CFLAGS := -Wall -Wextra -Werror
+
+HDRS := libft.h
 
 PLUS = \033[38;5;40m+\033[0;00m
 MINUS = \033[38;5;160m-\033[0;00m
@@ -28,9 +31,10 @@ $(NAME): $(OBJS)
 
 %.o: %.c $(HDRS)
 	@$(CC) -c $(CFLAGS) -o $@ $<
+	@echo " ${PLUS} $@"
 
 clean:
-	@rm -fv $(OBJS) | sed -E $$'s/(.*)/ $(MINUS) \\1/g'
+	@rm -fv $(OBJS) | sed -e $$'s/^/ $(MINUS) /'
 
 fclean: clean
 	@rm -fv $(NAME)
