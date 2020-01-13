@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:11:56 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/12 19:35:48 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/01/13 17:22:34 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char			**ft_strsplit(const char *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words((char*)s, c);
+	if (words == 0)
+		return (NULL);
 	ret = (char **)malloc(sizeof(char*) * words + 1);
 	if (!ret)
 		return (NULL);
