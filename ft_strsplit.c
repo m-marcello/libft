@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:11:56 by mmarcell       #+#    #+#                */
-/*   Updated: 2020/01/13 17:22:34 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/01/22 20:02:12 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	count_words(char *s, char c)
 	return (count);
 }
 
-static char		**make_words(char **ret, char *s, char c)
+static int		make_words(char ***ret, char *s, char c)
 {
 	size_t	i;
 	size_t	start;
@@ -45,30 +45,42 @@ static char		**make_words(char **ret, char *s, char c)
 			start = i;
 			while (s[i] && s[i] != c)
 				i++;
-			ret[count] = (char*)malloc(i - start + 1);
-			ret[count] = ft_strsub(s, start, i - start);
+			(*ret)[count] = ft_strsub(s, start, i - start);
+			if ((*ret)[count] == 0)
+				return (0);
 			count++;
 		}
 		if (s[i] != 0)
 			i++;
 	}
-	return (ret);
+	return (1);
 }
 
 char			**ft_strsplit(const char *s, char c)
 {
 	char	**ret;
 	size_t	words;
+	int		i;
 
 	if (!s)
 		return (NULL);
 	words = count_words((char*)s, c);
 	if (words == 0)
 		return (NULL);
-	ret = (char **)malloc(sizeof(char*) * words + 1);
+	ret = (char **)malloc(sizeof(char*) * (words + 1));
 	if (!ret)
 		return (NULL);
 	ret[words] = NULL;
-	ret = make_words(ret, (char*)s, c);
+	if (make_words(&ret, (char*)s, c) == 0)
+	{
+		i = 0;
+		while (ret[i])
+		{
+			free(ret[i]);
+			i++;
+		}
+		free(ret);
+		return (NULL);
+	}
 	return (ret);
 }

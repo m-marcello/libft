@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:11:00 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/19 17:39:46 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/01/22 17:48:08 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	if (s)
 		len_s = ft_strlen(s);
 	ret = ft_memalloc(len + 1);
-	if (start >= len_s)
-		return (ret);
 	if (!ret)
 		return (NULL);
+	if (start >= len_s)
+		return (ret);
 	while (i < len)
 	{
 		if (start + i < len_s)
