@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/08 10:48:22 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/12 19:39:15 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/02/15 14:54:34 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int			get_next_line(const int fd, char **line)
 		saved[fd] = ft_strjoin(tmp, buf);
 		ft_strdel(&tmp);
 		if (!saved[fd] || read_bytes == 0)
-			return (-1);
+			return (0);
 	}
 	if (saved[fd][0])
 		*line = create_line(saved[fd]);
