@@ -6,11 +6,12 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/08 10:48:22 by mmarcell       #+#    #+#                */
-/*   Updated: 2020/02/15 14:54:34 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/02/18 20:15:04 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
 
 /*
@@ -71,6 +72,30 @@ static char	*create_line(char *saved)
 
 /*
 ** -------------------------------------------------------------------------- **
+** reads BUFF_SIZE characters into the buffer and concatenates it to the already
+** saved string (if any) for that file-descriptor
+** params
+**	int *read_bytes	the number of read bytes
+**	int fd			the file-descriptor from where to read from
+**	char *buf		the buffer to read into
+**	char *saved		the saved string for the file-descriptor
+** return
+**	char *saved		the new string that is saved for the file-descriptor
+*/
+
+static char	*read_to_buf(int *read_bytes, int fd, char *buf, char *saved)
+{
+	char		*tmp;
+	ft_bzero(buf, BUFF_SIZE + 1);
+	*read_bytes = read(fd, buf, BUFF_SIZE);
+	tmp = saved;
+	saved = ft_strjoin(tmp, buf);
+	ft_strdel(&tmp);
+	return (saved);
+}
+
+/*
+** -------------------------------------------------------------------------- **
 ** reads next line from fd
 ** params
 **	const int fd	fd to read from
@@ -92,11 +117,12 @@ static char	*create_line(char *saved)
 int			get_next_line(const int fd, char **line)
 {
 	static char	*saved[FD_MAX];
-	char		buf[BUFF_SIZE + 1];
+	char		*buf;
 	int			read_bytes;
-	char		*tmp;
 
-	if (fd < 0 || FD_MAX < fd || BUFF_SIZE < 1 || (read(fd, buf, 0) < 0))
+	buf = (char*)malloc(sizeof(char) * BUFF_SIZE + 1);
+	if (!buf || fd < 0 || FD_MAX < fd || BUFF_SIZE < 1 ||
+		(read(fd, buf, 0) < 0))
 		return (-1);
 	if (!(saved[fd]))
 		saved[fd] = ft_strnew(0);
@@ -105,11 +131,7 @@ int			get_next_line(const int fd, char **line)
 	read_bytes = 1;
 	while (read_bytes && ft_strchr(saved[fd], '\n') == NULL)
 	{
-		ft_bzero(buf, BUFF_SIZE + 1);
-		read_bytes = read(fd, buf, BUFF_SIZE);
-		tmp = saved[fd];
-		saved[fd] = ft_strjoin(tmp, buf);
-		ft_strdel(&tmp);
+		saved[fd] = read_to_buf(&read_bytes, fd, buf, saved[fd]);
 		if (!saved[fd] || read_bytes == 0)
 			return (0);
 	}
