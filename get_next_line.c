@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/08 10:48:22 by mmarcell       #+#    #+#                */
-/*   Updated: 2020/02/18 20:15:04 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/02/19 14:46:19 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,24 @@ static char	*read_to_buf(int *read_bytes, int fd, char *buf, char *saved)
 
 /*
 ** -------------------------------------------------------------------------- **
+** small function to properly exit the function and free the buffer
+** params
+**	int ret		the return value to exit the function
+**	char **buf	the buffer to free
+** return
+**	int ret		the given return value
+*/
+
+static int	exit_function(int ret, char **buf)
+{
+	if (*buf != 0)
+		free(*buf);
+	*buf = 0;
+	return (ret);
+}
+
+/*
+** -------------------------------------------------------------------------- **
 ** reads next line from fd
 ** params
 **	const int fd	fd to read from
@@ -121,21 +139,21 @@ int			get_next_line(const int fd, char **line)
 	int			read_bytes;
 
 	buf = (char*)malloc(sizeof(char) * BUFF_SIZE + 1);
-	if (!buf || fd < 0 || FD_MAX < fd || BUFF_SIZE < 1 ||
-		(read(fd, buf, 0) < 0))
-		return (-1);
 	if (!(saved[fd]))
 		saved[fd] = ft_strnew(0);
-	if (!(saved[fd]))
-		return (-1);
+	if (!buf || fd < 0 || FD_MAX < fd || BUFF_SIZE < 1 ||
+		(read(fd, buf, 0) < 0) || !(saved[fd]))
+		return (exit_function(-1, &buf));
 	read_bytes = 1;
 	while (read_bytes && ft_strchr(saved[fd], '\n') == NULL)
 	{
 		saved[fd] = read_to_buf(&read_bytes, fd, buf, saved[fd]);
 		if (!saved[fd] || read_bytes == 0)
-			return (0);
+			return (exit_function(0, &buf));
 	}
 	if (saved[fd][0])
 		*line = create_line(saved[fd]);
+	free(buf);
+	buf = 0;
 	return (save_rest_or_free_saved(&saved[fd]));
 }
