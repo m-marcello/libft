@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/08 10:48:22 by mmarcell       #+#    #+#                */
-/*   Updated: 2020/02/19 14:46:19 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/02/22 19:48:51 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ static char	*create_line(char *saved)
 static char	*read_to_buf(int *read_bytes, int fd, char *buf, char *saved)
 {
 	char		*tmp;
+	
 	ft_bzero(buf, BUFF_SIZE + 1);
 	*read_bytes = read(fd, buf, BUFF_SIZE);
 	tmp = saved;
