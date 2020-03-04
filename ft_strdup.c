@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 20:00:16 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/02/18 13:14:05 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/03/04 17:40:15 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char	*ft_strdup(const char *s)
 	char	*ret;
 	size_t	i;
 
-	ret = ft_memalloc(ft_strlen(s) + 1);
-	if (ret)
+	ret = ft_strnew(ft_strlen(s));
+	if (ret != 0 && s != 0)
 	{
 		i = 0;
 		while (s[i])
