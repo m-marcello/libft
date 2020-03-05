@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/03 17:04:45 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/12 17:20:51 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/03/05 19:58:44 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ static void	format_double(long double ldb, t_buffer *buf, t_flags *flags)
 	flags->prcs = (!flags->dt) ? 6 : flags->prcs;
 	flags->dt = 1;
 	len = ft_absolute_doublelen(ldb + rounder(flags->prcs), flags->prcs);
-	len = (ldb < 0 || flags->spc || flags->pls) ? ++len : len;
+	if (ldb < 0 || flags->spc || flags->pls)
+		++len;
 	if (flags->spc && ldb >= 0)
 		buff_push(buf, " ", 1);
 	if (flags->zr || flags->mns)
