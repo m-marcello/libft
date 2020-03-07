@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/08 10:48:22 by mmarcell       #+#    #+#                */
-/*   Updated: 2020/02/23 17:51:55 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/03/05 15:13:48 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ static int	save_rest_or_free_saved(char **saved)
 {
 	size_t	i;
 	size_t	len;
-	char	*rest;
+	// char	*rest;
+	char	*tmp;
 
 	if (!(*saved)[0])
 	{
@@ -45,9 +46,12 @@ static int	save_rest_or_free_saved(char **saved)
 		ft_strdel(saved);
 		return (1);
 	}
-	rest = &((*saved)[i + 1]);
-	ft_memmove(*saved, rest, (len - i - 1));
-	ft_bzero(&((*saved)[len - i - 1]), (i + 1));
+	// rest = &((*saved)[i + 1]);
+	// ft_memmove(*saved, rest, (len - i - 1));
+	// ft_bzero(&((*saved)[len - i - 1]), (i + 1));
+	tmp = *saved;
+	*saved = ft_strdup(&((*saved)[i + 1]));
+	ft_strdel(&tmp);
 	return (1);
 }
 
