@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/08 16:46:03 by mmarcell       #+#    #+#                 #
-#    Updated: 2020/01/08 16:49:45 by mmarcell      ########   odam.nl          #
+#    Updated: 2020/03/20 11:36:17 by moana         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_lstadd_back ft_lstfold ft_lstadd_behind ft_lstadd_before ft_lstcount\
 ft_atoi ft_itoa ft_itoa_base\
 ft_absolute_nbrlen ft_absolute_doublelen ft_power ft_double_power\
 get_next_line\
-ft_printf/ft_printf ft_printf/buffer ft_printf/flags\
-ft_printf/formatting_prep ft_printf/formatting ft_printf/ftobuf\
-ft_printf/itobuf ft_printf/launcher_int ft_printf/launcher_double\
-ft_printf/launcher_string ft_printf/launcher_n
+printf_ft_printf printf_buffer printf_flags\
+printf_formatting_prep printf_formatting printf_ftobuf\
+printf_itobuf printf_launcher_int printf_launcher_double\
+printf_launcher_string printf_launcher_n

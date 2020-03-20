@@ -6,13 +6,13 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/03 17:04:45 by mmarcell       #+#    #+#                */
-/*   Updated: 2020/03/05 19:58:44 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/03/20 11:24:37 by moana         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <float.h>
 #include <limits.h>
-#include "../libft.h"
+#include "libft.h"
 
 static void	print_sign(long double ldb, t_buffer *buf, t_flags *flags)
 {
