@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 21:05:44 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/12 17:17:55 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/03/24 15:40:54 by moana         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdarg.h>
 # include <stdio.h>
 
+# define TRUE 1
+# define FALSE 0
 # define BUFF_SIZE 512
 # define FD_MAX 4864
 # define CONV_CHAR_START 'B'
