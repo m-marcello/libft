@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/16 20:12:13 by mmarcell       #+#    #+#                */
-/*   Updated: 2019/10/12 19:38:21 by mmarcell      ########   odam.nl         */
+/*   Created: 2019/01/16 20:12:13 by mmarcell      #+#    #+#                 */
+/*   Updated: 2020/04/10 09:51:02 by moana         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*ft_itoa(long long int n)
 	unsigned long long int	power;
 	unsigned int			i;
 
-	len = ft_nbrlen_unsigned(n, 10) + (n < 0);
+	len = ft_absolute_nbrlen(n, 10) + (n < 0);
 	if (n == -9223372036854775807)
 		return ("-9223372036854775807");
 	result = (char *)malloc(sizeof(char) * len + 1);
