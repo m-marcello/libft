@@ -5,16 +5,16 @@
 #                                                      +:+                     #
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/02/14 13:21:34 by mmarcell       #+#    #+#                 #
-#    Updated: 2020/03/20 11:21:25 by moana         ########   odam.nl          #
+#    Created: 2019/02/14 13:21:34 by mmarcell      #+#    #+#                  #
+#    Updated: 2020/04/22 17:32:25 by moana         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-include mini_srcs
+include _file_names
 
 NAME := libft.a
 
-OBJS := $(MINI_SOURCES:%=objs/%.o)
+OBJS := $(FILES:%.c=objs/%.o)
 
 CFLAGS := -Wall -Wextra -Werror
 
@@ -27,13 +27,25 @@ MINUS = \033[0;31m-\033[0;00m
 
 all: $(NAME)
 
+# uncomment for linux
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $^
 	@echo -e " ${PLUS} $@"
 
+# uncomment for linux
 objs/%.o: srcs/%.c $(HDRS) | objs
 	@$(CC) -c $(CFLAGS) -o $@ $(INCLUDES) $<
 	@echo -e " ${PLUS} $@"
+
+## uncomment for macOS
+#$(NAME): $(OBJS)
+#	@ar -rcs $(NAME) $^
+#	@echo " ${PLUS} $@"
+#
+## uncomment for macOS
+#objs/%.o: srcs/%.c $(HDRS) | objs
+#	@$(CC) -c $(CFLAGS) -o $@ $(INCLUDES) $<
+#	@echo " ${PLUS} $@"
 
 objs:
 	@mkdir -p $@

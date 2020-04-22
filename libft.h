@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/16 21:05:44 by mmarcell       #+#    #+#                */
-/*   Updated: 2020/03/24 15:40:54 by moana         ########   odam.nl         */
+/*   Created: 2019/01/16 21:05:44 by mmarcell      #+#    #+#                 */
+/*   Updated: 2020/04/22 17:53:59 by moana         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define BUFF_SIZE 512
 # define FD_MAX 4864
 # define CONV_CHAR_START 'B'
-# define CONV_CHAR_END 'x' + 1
+# define CONV_CHAR_END 121
 
 typedef struct		s_list
 {
