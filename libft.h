@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 21:05:44 by mmarcell      #+#    #+#                 */
-/*   Updated: 2020/04/22 17:53:59 by moana         ########   odam.nl         */
+/*   Updated: 2020/04/23 11:58:20 by moana         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ size_t				ft_lstcount(t_list *lst);
 void				*ft_memdup(void *ptr, size_t size);
 long long int		ft_atoi(const char *s);
 void				ft_bzero(void *s, size_t n);
+void				ft_swap(void *ptr1, void *ptr2);
+int					ft_isint(char *str);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
@@ -135,6 +137,7 @@ char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strtrim(const char *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+long long int		ft_absolute(long long int nbr);
 int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);
 int					ft_dprintf(const int fd, const char *format, ...);

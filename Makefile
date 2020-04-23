@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-include _file_names
+include srcs/_file_names
 
 NAME := libft.a
 

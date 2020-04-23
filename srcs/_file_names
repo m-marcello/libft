@@ -15,10 +15,12 @@ FILES := ft_putchar.c ft_putchar_fd.c \
 	ft_putendl.c ft_putendl_fd.c \
 	ft_putnbr.c ft_putnbr_fd.c \
 	ft_tolower.c ft_toupper.c \
+	ft_isint.c \
 	ft_isdigit.c ft_isalpha.c ft_isalnum.c \
 	ft_isprint.c ft_isascii.c \
 	ft_isupper.c ft_islower.c \
 	ft_bzero.c \
+	ft_swap.c \
 	ft_atoi.c ft_itoa.c ft_itoa_base.c \
 	ft_memalloc.c ft_memdel.c \
 	ft_memset.c \
@@ -51,6 +53,7 @@ FILES := ft_putchar.c ft_putchar_fd.c \
 	ft_lstfold.c \
 	ft_lstcount.c \
 	ft_lstadd_behind.c ft_lstadd_before.c \
+	ft_absolute.c \
 	ft_absolute_nbrlen.c ft_absolute_doublelen.c \
 	ft_power.c ft_double_power.c \
 	get_next_line.c \
