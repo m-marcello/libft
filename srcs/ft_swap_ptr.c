@@ -6,16 +6,16 @@
 /*   By: moana <moana@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 17:34:40 by moana         #+#    #+#                 */
-/*   Updated: 2020/04/17 17:36:16 by moana         ########   odam.nl         */
+/*   Updated: 2020/04/25 17:27:41 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(void *ptr1, void *ptr2)
+void	ft_swap_ptr(void **ptr1, void **ptr2)
 {
 	void	*tmp;
 
-	tmp = ptr1;
-	ptr1 = ptr2;
-	ptr2 = tmp;
+	tmp = *ptr1;
+	*ptr1 = *ptr2;
+	*ptr2 = tmp;
 	return ;
 }
