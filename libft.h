@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 21:05:44 by mmarcell      #+#    #+#                 */
-/*   Updated: 2020/04/25 17:28:49 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/04/30 15:29:29 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strtrim(const char *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-long long int		ft_absolute(long long int nbr);
+unsigned long long	ft_absolute(long long int nbr);
 int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);
 int					ft_dprintf(const int fd, const char *format, ...);
