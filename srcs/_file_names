@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/08 16:46:03 by mmarcell      #+#    #+#                  #
-#    Updated: 2020/05/12 10:55:23 by mmarcell      ########   odam.nl          #
+#    Updated: 2020/05/12 11:18:33 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ FILES := ft_putchar.c ft_putchar_fd.c \
 	ft_lstcount.c \
 	ft_lstadd_behind.c ft_lstadd_before.c \
 	ft_lstrev.c \
-	ft_lstdequere.c \
+	ft_lstdequeue.c \
 	ft_absolute.c \
 	ft_absolute_nbrlen.c ft_absolute_doublelen.c \
 	ft_power.c ft_double_power.c \
