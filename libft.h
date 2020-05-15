@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 21:05:44 by mmarcell      #+#    #+#                 */
-/*   Updated: 2020/05/12 10:54:58 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/05/15 15:47:29 by moana         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define FD_MAX 4864
 # define CONV_CHAR_START 'B'
 # define CONV_CHAR_END 121
+# define FT_INT_MAX 2147483647
 
 typedef struct		s_list
 {
