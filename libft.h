@@ -6,7 +6,7 @@
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/16 21:05:44 by mmarcell      #+#    #+#                 */
-/*   Updated: 2020/06/09 16:45:15 by mmarcell      ########   odam.nl         */
+/*   Updated: 2020/06/09 17:30:52 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
 typedef struct		s_flags
 {
 	unsigned int	hh			: 1;
@@ -65,9 +66,6 @@ typedef struct		s_buffer
 	ssize_t		idx;
 	int			fd;
 }					t_buffer;
-
-typedef void		(*t_conversion_table[CONV_CHAR_END - CONV_CHAR_START])
-					(va_list ap, t_buffer *buf, t_flags *flags);
 
 long long int		ft_atoi(const char *s);
 char				*ft_itoa(long long int n);
@@ -168,6 +166,21 @@ int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);
 int					ft_dprintf(const int fd, const char *format, ...);
 
+typedef void		(*t_conversion_table[CONV_CHAR_END - CONV_CHAR_START])
+					(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_double(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_int10(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_int10_unsgnd(va_list ap, t_buffer *buf,
+					t_flags *flags);
+void				launch_int8(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_int16(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_int2(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_n(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_c(va_list ap, t_buffer *buf, t_flags *flags);
+void				launch_s(va_list ap, t_buffer *buf, t_flags *flags);
+void				handler_sc(char *s, t_buffer *buf, t_flags *flags,
+					char is_char);
+void				handle_char(char c, t_buffer *buf, t_flags *flags);
 void				buff_push(t_buffer *buf, char *str, size_t n);
 void				buff_filler(t_buffer *buf, char c, unsigned int n);
 void				buff_print_dump(t_buffer *buf);
@@ -182,7 +195,6 @@ void				format_prepend(int is_positive, unsigned int nbrlen,
 					t_flags *flags, t_buffer *buf);
 void				format_append(unsigned int nbrlen, t_flags *flags,
 					t_buffer *buf);
-int					ft_dprintf(const int fd, const char *format, ...);
 long double			rounder(int precision);
 void				ftobuf(long double f, unsigned int prcs, t_buffer *buf);
 void				longftobuf(long double ldb, unsigned int prcs,
@@ -191,18 +203,6 @@ void				absolute_itobuf(long long nb, unsigned int base,
 					t_buffer *buf, int is_cap);
 void				unsigned_itobuf(long long unsigned nb, unsigned int base,
 					t_buffer *buf, int is_cap);
-void				launch_double(va_list ap, t_buffer *buf, t_flags *flags);
-void				launch_int10(va_list ap, t_buffer *buf, t_flags *flags);
-void				launch_int10_unsgnd(va_list ap, t_buffer *buf,
-					t_flags *flags);
-void				launch_int8(va_list ap, t_buffer *buf, t_flags *flags);
-void				launch_int16(va_list ap, t_buffer *buf, t_flags *flags);
-void				launch_int2(va_list ap, t_buffer *buf, t_flags *flags);
-void				launch_n(va_list ap, t_buffer *buf, t_flags *flags);
-void				launch_c(va_list ap, t_buffer *buf, t_flags *flags);
-void				launch_s(va_list ap, t_buffer *buf, t_flags *flags);
-void				handler_sc(char *s, t_buffer *buf, t_flags *flags,
-					char is_char);
-void				handle_char(char c, t_buffer *buf, t_flags *flags);
+
 
 #endif
