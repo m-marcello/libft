@@ -102,6 +102,7 @@ void				ft_lstadd_behind(t_list **alst, t_list *node,
 void				ft_lstadd_before(t_list **alst, t_list *node,
 					t_list *new_nd);
 size_t				ft_lstcount(t_list *lst);
+t_list				*ft_lstrev(t_list **alst);
 t_list				*ft_lstdequeue(t_list **alst);
 
 void				ft_delete(void *ptr, size_t size);
