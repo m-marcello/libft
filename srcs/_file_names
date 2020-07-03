@@ -56,7 +56,6 @@ FILES := ft_putchar.c ft_putchar_fd.c \
 	ft_lstcount.c \
 	ft_lstadd_behind.c ft_lstadd_before.c \
 	ft_lstrev.c \
-	ft_lstdequeue.c \
 	ft_absolute.c \
 	ft_absolute_nbrlen.c ft_absolute_doublelen.c \
 	ft_power.c ft_double_power.c \
