@@ -2,4 +2,4 @@ main.c
 *.o
 a.out*
 libft.a
-
+tests/test
