@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/05/14 13:09:04 by mmarcell      #+#    #+#                  #
-#    Updated: 2021/05/14 13:41:24 by mmarcell      ########   odam.nl          #
+#    Updated: 2021/05/14 15:07:21 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,10 +39,10 @@ obj:
 	@mkdir -p $@
 
 clean:
-	@rm -fv $(TEST_OBJ) | sed 's/^/ $(MINUS) /'
+	@rm -rfv obj | sed "s/^/ $(MINUS) /"
 
 fclean: clean
-	@rm -fv test | sed 's/^/ $(MINUS) /'
+	@rm -fv test | sed "s/^/ $(MINUS) /"
 
 re: fclean all
 

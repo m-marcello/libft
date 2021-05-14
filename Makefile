@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/14 13:21:34 by mmarcell      #+#    #+#                  #
-#    Updated: 2021/05/14 13:27:37 by mmarcell      ########   odam.nl          #
+#    Updated: 2021/05/14 15:05:48 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,5 +51,6 @@ re:
 test: $(OBJ) $(HDR)
 	@$(MAKE) all
 	@make re -C tests
+	@./tests/test
 
 .PHONY: all clean fclean re
