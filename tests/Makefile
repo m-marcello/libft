@@ -5,30 +5,30 @@
 #                                                      +:+                     #
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/02/14 13:21:34 by mmarcell      #+#    #+#                  #
-#    Updated: 2021/05/14 13:27:37 by mmarcell      ########   odam.nl          #
+#    Created: 2021/05/14 13:09:04 by mmarcell      #+#    #+#                  #
+#    Updated: 2021/05/14 13:41:24 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-include src/.files.mk
+include ../src/.files.mk
+include ./src/.test_files.mk
 
-NAME := libft.a
-
-OBJ := $(FILES:%.c=obj/%.o)
+OBJ := $(FILES:%.c=../obj/%.o)
+TEST_OBJ := $(TEST_FILES:%.c=obj/%.o)
 
 CFLAGS := -Wall -Wextra -Werror
 
-HDR_PATH := .
+HDR_PATH := ..
 INCLUDES := -I $(HDR_PATH)
 HDR := $(HDR_PATH)/libft.h
 
 PLUS = $$(tput setaf 2)+$$(tput sgr0)
 MINUS = $$(tput setaf 1)-$$(tput sgr0)
 
-all: $(NAME)
+all: test
 
-$(NAME): $(OBJ)
-	@ar -rcs $(NAME) $^
+test: $(OBJ) $(TEST_OBJ)
+	@$(CC) -o $@ $^ -lcriterion
 	@echo " ${PLUS} $@"
 
 obj/%.o: src/%.c $(HDR) | obj
@@ -39,17 +39,11 @@ obj:
 	@mkdir -p $@
 
 clean:
-	@rm -rfv obj | sed "s/^/ $(MINUS) /"
+	@rm -fv $(TEST_OBJ) | sed 's/^/ $(MINUS) /'
 
 fclean: clean
-	@rm -fv $(NAME) | sed "s/^/ $(MINUS) /"
+	@rm -fv test | sed 's/^/ $(MINUS) /'
 
-re:
-	$(MAKE) fclean
-	$(MAKE) all
+re: fclean all
 
-test: $(OBJ) $(HDR)
-	@$(MAKE) all
-	@make re -C tests
-
-.PHONY: all clean fclean re
+.PHONY: all test clean fclean re

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnew.c                                        :+:    :+:            */
+/*   ft_save_memalloc.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mmarcell <mmarcell@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/16 20:07:48 by mmarcell      #+#    #+#                 */
-/*   Updated: 2020/04/22 17:43:18 by moana         ########   odam.nl         */
+/*   Created: 2019/01/16 20:07:07 by mmarcell      #+#    #+#                 */
+/*   Updated: 2021/05/14 13:02:31 by mmarcell      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_save_memalloc(size_t size)
 {
-	char	*str;
-	size_t	i;
+	void	*ptr;
 
-	str = (char*)malloc(sizeof(char) * size + 1);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i <= size)
+	ptr = malloc(size);
+	if (ptr)
 	{
-		str[i] = 0;
-		i++;
+		ft_bzero(ptr, size);
+		return (ptr);
 	}
-	return (str);
+	perror(NULL);
+	exit(-1);
 }

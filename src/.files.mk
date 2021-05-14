@@ -6,7 +6,7 @@
 #    By: mmarcell <mmarcell@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/08 16:46:03 by mmarcell      #+#    #+#                  #
-#    Updated: 2020/06/09 17:23:04 by mmarcell      ########   odam.nl          #
+#    Updated: 2021/05/14 12:01:45 by mmarcell      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ FILES := ft_putchar.c ft_putchar_fd.c \
 	ft_swap_ptr.c \
 	ft_atoi.c ft_itoa.c ft_itoa_base.c \
 	ft_delete.c \
-	ft_memalloc.c ft_memdel.c \
+	ft_memalloc.c ft_save_memalloc.c \
+	ft_memdel.c \
 	ft_memset.c \
 	ft_memcpy.c ft_memccpy.c \
 	ft_memdup.c \
@@ -35,7 +36,7 @@ FILES := ft_putchar.c ft_putchar_fd.c \
 	ft_strlen.c \
 	ft_strcmp.c ft_strncmp.c \
 	ft_strcpy.c ft_strncpy.c \
-	ft_strdup.c \
+	ft_strdup.c ft_strndup.c \
 	ft_strchr.c ft_strrchr.c \
 	ft_strstr.c ft_strnstr.c \
 	ft_strclr.c \
